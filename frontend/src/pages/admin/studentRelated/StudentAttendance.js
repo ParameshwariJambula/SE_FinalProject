@@ -99,7 +99,8 @@ const StudentAttendance = ({ situation }) => {
                             flex: '1 1 auto',
                             alignItems: 'center',
                             display: 'flex',
-                            justifyContent: 'center'
+                            justifyContent: 'center',
+                            color: 'black'
                         }}
                     >
                         <Box

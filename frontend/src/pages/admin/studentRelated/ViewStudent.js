@@ -146,7 +146,7 @@ const ViewStudent = () => {
     const StudentAttendanceSection = () => {
         const renderTableSection = () => {
             return (
-                <>
+                <div style={{color: 'black'}}>
                     <h3>Attendance:</h3>
                     <Table>
                         <TableHead>
@@ -226,7 +226,7 @@ const ViewStudent = () => {
                     <Button variant="contained" sx={styles.styledButton} onClick={() => navigate("/Admin/students/student/attendance/" + studentID)}>
                         Add Attendance
                     </Button>
-                </>
+                </div>
             )
         }
         const renderChartSection = () => {
@@ -244,7 +244,7 @@ const ViewStudent = () => {
                         {selectedSection === 'table' && renderTableSection()}
                         {selectedSection === 'chart' && renderChartSection()}
 
-                        <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+                        <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, color: 'black'}} elevation={3}>
                             <BottomNavigation value={selectedSection} onChange={handleSectionChange} showLabels>
                                 <BottomNavigationAction
                                     label="Table"
@@ -271,8 +271,8 @@ const ViewStudent = () => {
     const StudentMarksSection = () => {
         const renderTableSection = () => {
             return (
-                <>
-                    <h3>Subject Marks:</h3>
+                <div>
+                    <h3 style={{color: 'black'}}>Subject Marks:</h3>
                     <Table>
                         <TableHead>
                             <StyledTableRow>
@@ -297,7 +297,7 @@ const ViewStudent = () => {
                     <Button variant="contained" sx={styles.styledButton} onClick={() => navigate("/Admin/students/student/marks/" + studentID)}>
                         Add Marks
                     </Button>
-                </>
+                </div>
             )
         }
         const renderChartSection = () => {
@@ -341,7 +341,7 @@ const ViewStudent = () => {
 
     const StudentDetailsSection = () => {
         return (
-            <div>
+            <div style={{color: 'black'}}>
                 Name: {userDetails.name}
                 <br />
                 Roll Number: {userDetails.rollNum}

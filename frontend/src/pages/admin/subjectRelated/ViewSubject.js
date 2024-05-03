@@ -109,7 +109,7 @@ const ViewSubject = () => {
           </>
         ) : (
           <>
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h5" gutterBottom style={{color: 'black'}}>
               Students List:
             </Typography>
 
@@ -145,7 +145,7 @@ const ViewSubject = () => {
     const numberOfStudents = sclassStudents.length;
 
     return (
-      <>
+      <div style={{color: 'black'}}>
         <Typography variant="h4" align="center" gutterBottom>
           Subject Details
         </Typography>
@@ -174,7 +174,7 @@ const ViewSubject = () => {
             Add Subject Teacher
           </GreenButton>
         }
-      </>
+      </div>
     );
   }
 

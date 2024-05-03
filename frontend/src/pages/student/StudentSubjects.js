@@ -45,7 +45,7 @@ const StudentSubjects = () => {
 
     const renderTableSection = () => {
         return (
-            <>
+            <div style={{color: 'black'}}>
                 <Typography variant="h4" align="center" gutterBottom>
                     Subject Marks
                 </Typography>
@@ -70,7 +70,7 @@ const StudentSubjects = () => {
                         })}
                     </TableBody>
                 </Table>
-            </>
+            </div>
         );
     };
 
@@ -80,7 +80,7 @@ const StudentSubjects = () => {
 
     const renderClassDetailsSection = () => {
         return (
-            <Container>
+            <Container style={{color: 'black'}}>
                 <Typography variant="h4" align="center" gutterBottom>
                     Class Details
                 </Typography>

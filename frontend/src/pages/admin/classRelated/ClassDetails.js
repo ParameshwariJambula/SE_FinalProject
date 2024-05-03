@@ -115,7 +115,7 @@ const ClassDetails = () => {
                     </Box>
                     :
                     <>
-                        <Typography variant="h5" gutterBottom>
+                        <Typography variant="h5" gutterBottom style={{color: 'black'}}>
                             Subjects List:
                         </Typography>
 
@@ -191,7 +191,7 @@ const ClassDetails = () => {
                     </>
                 ) : (
                     <>
-                        <Typography variant="h5" gutterBottom>
+                        <Typography variant="h5" gutterBottom  style={{color: 'black'}}>
                             Students List:
                         </Typography>
 
@@ -205,9 +205,9 @@ const ClassDetails = () => {
 
     const ClassTeachersSection = () => {
         return (
-            <>
-                Teachers
-            </>
+            <div style={{color: 'black'}}>
+                Instructors
+            </div>
         )
     }
 
@@ -216,7 +216,7 @@ const ClassDetails = () => {
         const numberOfStudents = sclassStudents.length;
 
         return (
-            <>
+            <div style={{color: 'black'}}>
                 <Typography variant="h4" align="center" gutterBottom>
                     Class Details
                 </Typography>
@@ -245,7 +245,7 @@ const ClassDetails = () => {
                         Add Subjects
                     </GreenButton>
                 }
-            </>
+            </div>
         );
     }
 
@@ -262,7 +262,7 @@ const ClassDetails = () => {
                                     <Tab label="Details" value="1" />
                                     <Tab label="Subjects" value="2" />
                                     <Tab label="Students" value="3" />
-                                    <Tab label="Teachers" value="4" />
+                                    <Tab label="Instructors" value="4" />
                                 </TabList>
                             </Box>
                             <Container sx={{ marginTop: "3rem", marginBottom: "4rem" }}>

@@ -32,10 +32,10 @@ const TeacherDashboard = () => {
 
     return (
         <>
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={{ display: 'flex',backgroundColor: "black", color: 'white' }}>
                 <CssBaseline />
-                <AppBar open={open} position='absolute'>
-                    <Toolbar sx={{ pr: '24px' }}>
+                <AppBar open={open} position='absolute'  sx={{ display: 'flex', backgroundColor: "black", color: 'white' }}>
+                    <Toolbar sx={{ pr: '24px', color: 'inherit' }}>
                         <IconButton
                             edge="start"
                             color="inherit"
@@ -55,7 +55,7 @@ const TeacherDashboard = () => {
                             noWrap
                             sx={{ flexGrow: 1 }}
                         >
-                            Teacher Dashboard
+                            Instructor Dashboard
                         </Typography>
                         <AccountMenu />
                     </Toolbar>
@@ -111,6 +111,7 @@ const styles = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-end',
+        color: 'white',
         px: [1],
     },
     drawerStyled: {

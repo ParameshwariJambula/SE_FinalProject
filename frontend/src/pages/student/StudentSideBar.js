@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Divider, ListItemButton, ListItemIcon, ListItemText, ListSubheader } from '@mui/material';
+import { Divider, ListItemButton, ListItemIcon, ListItemText, ListSubheader, createTheme, ThemeProvider } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
 
 import HomeIcon from '@mui/icons-material/Home';
@@ -9,10 +9,18 @@ import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined';
 import ClassOutlinedIcon from '@mui/icons-material/ClassOutlined';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 
+const defaultTheme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+  });
+
 const StudentSideBar = () => {
     const location = useLocation();
     return (
         <>
+        <div style={{backgroundColor: "black", color: 'white'}}>
+            <ThemeProvider theme={defaultTheme}>
             <React.Fragment>
                 <ListItemButton component={Link} to="/">
                     <ListItemIcon>
@@ -57,6 +65,8 @@ const StudentSideBar = () => {
                     <ListItemText primary="Logout" />
                 </ListItemButton>
             </React.Fragment>
+            </ThemeProvider>
+            </div>
         </>
     )
 }
