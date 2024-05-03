@@ -63,7 +63,7 @@ const ViewStdAttendance = () => {
 
     const renderTableSection = () => {
         return (
-            <>
+            <div style={{color: 'black'}}>
                 <Typography variant="h4" align="center" gutterBottom>
                     Attendance
                 </Typography>
@@ -135,7 +135,7 @@ const ViewStdAttendance = () => {
                 <div>
                     Overall Attendance Percentage: {overallAttendancePercentage.toFixed(2)}%
                 </div>
-            </>
+            </div>
         )
     }
 
@@ -177,7 +177,7 @@ const ViewStdAttendance = () => {
                         </>
                         :
                         <>
-                            <Typography variant="h6" gutterBottom component="div">
+                            <Typography variant="h6" gutterBottom component="div" style={{color: 'black', alignContent: 'center'}}>
                                 Currently You Have No Attendance Details
                             </Typography>
                         </>

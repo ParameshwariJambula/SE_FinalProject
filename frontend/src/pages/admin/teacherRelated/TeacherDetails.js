@@ -2,7 +2,13 @@ import React, { useEffect } from 'react';
 import { getTeacherDetails } from '../../../redux/teacherRelated/teacherHandle';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Container, Typography } from '@mui/material';
+import { Button, Container, ThemeProvider, Typography, createTheme } from '@mui/material';
+
+const defaultTheme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+  });
 
 const TeacherDetails = () => {
     const navigate = useNavigate();
@@ -32,7 +38,8 @@ const TeacherDetails = () => {
                 <div>Loading...</div>
             ) : (
                 <Container>
-                    <Typography variant="h4" align="center" gutterBottom>
+                    <div style={{color: 'black'}}>
+                    <Typography variant="h4" align="center" gutterBottom >
                         Teacher Details
                     </Typography>
                     <Typography variant="h6" gutterBottom>
@@ -55,6 +62,7 @@ const TeacherDetails = () => {
                             Add Subject
                         </Button>
                     )}
+                    </div>
                 </Container>
             )}
         </>

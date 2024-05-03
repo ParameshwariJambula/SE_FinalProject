@@ -5,6 +5,8 @@ import { getAllTeachers } from '../../../redux/teacherRelated/teacherHandle';
 import {
     Paper, Table, TableBody, TableContainer,
     TableHead, TablePagination, Button, Box, IconButton,
+    createTheme,
+    ThemeProvider,
 } from '@mui/material';
 import { deleteUser } from '../../../redux/userRelated/userHandle';
 import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
@@ -13,6 +15,12 @@ import { BlueButton, GreenButton } from '../../../components/buttonStyles';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import SpeedDialTemplate from '../../../components/SpeedDialTemplate';
 import Popup from '../../../components/Popup';
+
+const defaultTheme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+  });
 
 const ShowTeachers = () => {
     const [page, setPage] = useState(0);
@@ -34,9 +42,9 @@ const ShowTeachers = () => {
         return <div>Loading...</div>;
     } else if (response) {
         return (
-            <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: '16px' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: '16px'}}>
                 <GreenButton variant="contained" onClick={() => navigate("/Admin/teachers/chooseclass")}>
-                    Add Teacher
+                    Add Instructor
                 </GreenButton>
             </Box>
         );
@@ -83,6 +91,8 @@ const ShowTeachers = () => {
     ];
 
     return (
+        <>
+        <ThemeProvider theme={defaultTheme}>
         <Paper sx={{ width: '100%', overflow: 'hidden' }}>
             <TableContainer>
                 <Table stickyHeader aria-label="sticky table">
@@ -163,6 +173,8 @@ const ShowTeachers = () => {
             <SpeedDialTemplate actions={actions} />
             <Popup message={message} setShowPopup={setShowPopup} showPopup={showPopup} />
         </Paper >
+        </ThemeProvider>
+        </>
     );
 };
 

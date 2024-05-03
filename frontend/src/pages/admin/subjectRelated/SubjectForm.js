@@ -87,8 +87,9 @@ const SubjectForm = () => {
     }, [status, navigate, error, response, dispatch]);
 
     return (
+        <div>
         <form onSubmit={submitHandler}>
-            <Box mb={2}>
+            <Box mb={2} style={{color: 'black'}}>
                 <Typography variant="h6" >Add Subjects</Typography>
             </Box>
             <Grid container spacing={2}>
@@ -154,7 +155,7 @@ const SubjectForm = () => {
                 ))}
                 <Grid item xs={12}>
                     <Box display="flex" justifyContent="flex-end">
-                        <Button variant="contained" color="primary" type="submit" disabled={loader}>
+                        <Button variant="contained" type="submit" disabled={loader}>
                             {loader ? (
                                 <CircularProgress size={24} color="inherit" />
                             ) : (
@@ -166,6 +167,7 @@ const SubjectForm = () => {
                 <Popup message={message} setShowPopup={setShowPopup} showPopup={showPopup} />
             </Grid>
         </form>
+        </div>
     );
 }
 

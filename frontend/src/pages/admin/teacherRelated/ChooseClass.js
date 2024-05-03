@@ -65,14 +65,14 @@ const ChooseClass = ({ situation }) => {
                             </Button>
                         </Box>
                         :
-                        <>
+                        <div style={{color: 'black'}}>
                             <Typography variant="h6" gutterBottom component="div">
                                 Choose a class
                             </Typography>
                             {Array.isArray(sclassesList) && sclassesList.length > 0 &&
                                 <TableTemplate buttonHaver={SclassButtonHaver} columns={sclassColumns} rows={sclassRows} />
                             }
-                        </>}
+                        </div>}
                 </>
             }
         </>

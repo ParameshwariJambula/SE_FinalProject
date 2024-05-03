@@ -148,7 +148,7 @@ const TeacherClassDetails = () => {
             {loading ? (
                 <div>Loading...</div>
             ) : (
-                <>
+                <div style={{color: 'black'}}>
                     <Typography variant="h4" align="center" gutterBottom>
                         Class Details
                     </Typography>
@@ -160,7 +160,7 @@ const TeacherClassDetails = () => {
                         </>
                     ) : (
                         <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-                            <Typography variant="h5" gutterBottom>
+                            <Typography variant="h5" gutterBottom style={{color: 'black'}}>
                                 Students List:
                             </Typography>
 
@@ -169,7 +169,7 @@ const TeacherClassDetails = () => {
                             }
                         </Paper>
                     )}
-                </>
+                </div>
             )}
         </>
     );

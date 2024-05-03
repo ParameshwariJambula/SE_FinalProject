@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Divider, ListItemButton, ListItemIcon, ListItemText, ListSubheader } from '@mui/material';
+import { Divider, ListItemButton, ListItemIcon, ListItemText, ListSubheader, ThemeProvider, createTheme } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
 
 import HomeIcon from "@mui/icons-material/Home";
@@ -12,50 +12,57 @@ import SupervisorAccountOutlinedIcon from '@mui/icons-material/SupervisorAccount
 import ReportIcon from '@mui/icons-material/Report';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 
+const defaultTheme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+  });
+  
 const SideBar = () => {
     const location = useLocation();
     return (
-        <>
+        <div style={{backgroundColor: "black", color: 'white'}}>
+            <ThemeProvider theme={defaultTheme}>
             <React.Fragment>
                 <ListItemButton component={Link} to="/">
                     <ListItemIcon>
-                        <HomeIcon color={location.pathname === ("/" || "/Admin/dashboard") ? 'primary' : 'inherit'} />
+                        <HomeIcon color='inherit' />
                     </ListItemIcon>
                     <ListItemText primary="Home" />
                 </ListItemButton>
                 <ListItemButton component={Link} to="/Admin/classes">
                     <ListItemIcon>
-                        <ClassOutlinedIcon color={location.pathname.startsWith('/Admin/classes') ? 'primary' : 'inherit'} />
+                        <ClassOutlinedIcon color='inherit' />
                     </ListItemIcon>
                     <ListItemText primary="Classes" />
                 </ListItemButton>
                 <ListItemButton component={Link} to="/Admin/subjects">
                     <ListItemIcon>
-                        <AssignmentIcon color={location.pathname.startsWith("/Admin/subjects") ? 'primary' : 'inherit'} />
+                        <AssignmentIcon color='inherit' />
                     </ListItemIcon>
                     <ListItemText primary="Subjects" />
                 </ListItemButton>
                 <ListItemButton component={Link} to="/Admin/teachers">
                     <ListItemIcon>
-                        <SupervisorAccountOutlinedIcon color={location.pathname.startsWith("/Admin/teachers") ? 'primary' : 'inherit'} />
+                        <SupervisorAccountOutlinedIcon color='inherit' />
                     </ListItemIcon>
-                    <ListItemText primary="Teachers" />
+                    <ListItemText primary="Instructors" />
                 </ListItemButton>
                 <ListItemButton component={Link} to="/Admin/students">
                     <ListItemIcon>
-                        <PersonOutlineIcon color={location.pathname.startsWith("/Admin/students") ? 'primary' : 'inherit'} />
+                        <PersonOutlineIcon color='inherit' />
                     </ListItemIcon>
                     <ListItemText primary="Students" />
                 </ListItemButton>
                 <ListItemButton component={Link} to="/Admin/notices">
                     <ListItemIcon>
-                        <AnnouncementOutlinedIcon color={location.pathname.startsWith("/Admin/notices") ? 'primary' : 'inherit'} />
+                        <AnnouncementOutlinedIcon color='inherit' />
                     </ListItemIcon>
                     <ListItemText primary="Notices" />
                 </ListItemButton>
                 <ListItemButton component={Link} to="/Admin/complains">
                     <ListItemIcon>
-                        <ReportIcon color={location.pathname.startsWith("/Admin/complains") ? 'primary' : 'inherit'} />
+                        <ReportIcon color='inherit' />
                     </ListItemIcon>
                     <ListItemText primary="Complains" />
                 </ListItemButton>
@@ -67,19 +74,20 @@ const SideBar = () => {
                 </ListSubheader>
                 <ListItemButton component={Link} to="/Admin/profile">
                     <ListItemIcon>
-                        <AccountCircleOutlinedIcon color={location.pathname.startsWith("/Admin/profile") ? 'primary' : 'inherit'} />
+                        <AccountCircleOutlinedIcon color='inherit' />
                     </ListItemIcon>
                     <ListItemText primary="Profile" />
                 </ListItemButton>
                 <ListItemButton component={Link} to="/logout">
                     <ListItemIcon>
-                        <ExitToAppIcon color={location.pathname.startsWith("/logout") ? 'primary' : 'inherit'} />
+                        <ExitToAppIcon color='inherit' />
                     </ListItemIcon>
                     <ListItemText primary="Logout" />
                 </ListItemButton>
             </React.Fragment>
-        </>
+            </ThemeProvider>
+        </div>
     )
 }
 
-export default SideBar
+export default SideBar;

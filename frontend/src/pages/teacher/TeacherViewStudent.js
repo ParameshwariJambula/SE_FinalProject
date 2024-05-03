@@ -60,7 +60,7 @@ const TeacherViewStudent = () => {
     ];
 
     return (
-        <>
+        <div style={{color: 'black'}}>
             {loading
                 ?
                 <>
@@ -209,7 +209,7 @@ const TeacherViewStudent = () => {
                     <br /><br /><br />
                 </div>
             }
-        </>
+        </div>
     )
 }
 

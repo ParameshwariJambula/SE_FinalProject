@@ -5,7 +5,13 @@ import { getSubjectDetails } from '../../../redux/sclassRelated/sclassHandle';
 import Popup from '../../../components/Popup';
 import { registerUser } from '../../../redux/userRelated/userHandle';
 import { underControl } from '../../../redux/userRelated/userSlice';
-import { CircularProgress } from '@mui/material';
+import { CircularProgress, ThemeProvider, createTheme } from '@mui/material';
+
+const defaultTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 const AddTeacher = () => {
   const params = useParams()
@@ -61,9 +67,10 @@ const AddTeacher = () => {
 
   return (
     <div>
+      <ThemeProvider theme={defaultTheme}>
       <div className="register">
         <form className="registerForm" onSubmit={submitHandler}>
-          <span className="registerTitle">Add Teacher</span>
+          <span className="registerTitle" style={{color: 'black'}}>Add Instructor</span>
           <br />
           <label>
             Subject : {subjectDetails && subjectDetails.subName}
@@ -99,6 +106,7 @@ const AddTeacher = () => {
         </form>
       </div>
       <Popup message={message} setShowPopup={setShowPopup} showPopup={showPopup} />
+      </ThemeProvider>
     </div>
   )
 }
